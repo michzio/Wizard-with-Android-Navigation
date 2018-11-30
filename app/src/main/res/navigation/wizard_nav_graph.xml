@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/wizard_nav_graph"
+    app:startDestination="@id/step1Fragment">
+
+    <fragment
+        android:id="@+id/menu1Fragment"
+        android:name="com.click5interactive.wizardnavigation.Menu1Fragment"
+        android:label="MyPackageFragment" />
+    <fragment
+        android:id="@+id/menu2Fragment"
+        android:name="com.click5interactive.wizardnavigation.Menu2Fragment"
+        android:label="CleaningTypesFragment" />
+    <fragment
+        android:id="@+id/menu3Fragment"
+        android:name="com.click5interactive.wizardnavigation.Menu3Fragment"
+        android:label="TipsAndTricksFragment" />
+
+    <fragment
+        android:id="@+id/step1Fragment"
+        android:name="com.click5interactive.wizardnavigation.Step1Fragment"
+        android:label="Step1Fragment" >
+        <action
+            android:id="@+id/action_step1Fragment_to_step2Fragment"
+            app:destination="@id/step2Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/step1Fragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/step2Fragment"
+        android:name="com.click5interactive.wizardnavigation.Step2Fragment"
+        android:label="Step2Fragment" >
+        <action
+            android:id="@+id/action_step2Fragment_to_step3Fragment"
+            app:destination="@id/step3Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/step2Fragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/step3Fragment"
+        android:name="com.click5interactive.wizardnavigation.Step3Fragment"
+        android:label="Step3Fragment" >
+        <action
+            android:id="@+id/action_step3Fragment_to_step4Fragment"
+            app:destination="@id/step4Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/step3Fragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/step4Fragment"
+        android:name="com.click5interactive.wizardnavigation.Step4Fragment"
+        android:label="Step2Fragment" >
+        <action
+            android:id="@+id/action_step4Fragment_to_step5Fragment"
+            app:destination="@id/step5Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/step4Fragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/step5Fragment"
+        android:name="com.click5interactive.wizardnavigation.Step5Fragment"
+        android:label="Step5Fragment" >
+        <action
+            android:id="@+id/action_step5Fragment_to_step6Fragment"
+            app:destination="@id/step6Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/step5Fragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/step6Fragment"
+        android:name="com.click5interactive.wizardnavigation.Step6Fragment"
+        android:label="Step2Fragment" >
+        <action
+            android:id="@+id/action_step6Fragment_to_step7Fragment"
+            app:destination="@id/step7Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/step6Fragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/step7Fragment"
+        android:name="com.click5interactive.wizardnavigation.Step7Fragment"
+        android:label="Step7Fragment" >
+        <action
+            android:id="@+id/action_step7Fragment_to_confirmFragment"
+            app:destination="@id/confirmFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpTo="@+id/step7Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.click5interactive.wizardnavigation.ConfirmFragment"
+        android:label="ConfirmFragment" />
+</navigation>
