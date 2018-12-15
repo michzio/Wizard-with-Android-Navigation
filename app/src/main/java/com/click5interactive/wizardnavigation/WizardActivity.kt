@@ -63,7 +63,8 @@ abstract class WizardActivity : HamburgerMenuActivity(), NavigationView.OnNaviga
 
         val navController = findNavController(R.id.nav_host_fragment)
         navController.setGraph(model.wizardGraph)
-        navController.addOnNavigatedListener(this::onNavigatedListener)
+        navController.addOnDestinationChangedListener(this::onNavigatedListener)
+        //navController.addOnNavigatedListener(this::onNavigatedListener)
 
         nav_view.setNavigationItemSelectedListener(this)
     }
@@ -71,7 +72,7 @@ abstract class WizardActivity : HamburgerMenuActivity(), NavigationView.OnNaviga
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         val navController = findNavController(R.id.nav_host_fragment)
-        if(hamburgerFragments.contains(navController.currentDestination.id)) {
+        if(hamburgerFragments.contains(navController.currentDestination?.id)) {
             navController.popBackStack()
         }
 
@@ -97,7 +98,7 @@ abstract class WizardActivity : HamburgerMenuActivity(), NavigationView.OnNaviga
 
     private var lastDestination: NavDestination? = null
 
-    private fun onNavigatedListener(controller: NavController, destination: NavDestination) {
+    private fun onNavigatedListener(controller: NavController, destination: NavDestination, arguments: Bundle?) {
         if(hamburgerFragments.contains(destination.id)) {
             wizard_header.visibility = View.GONE
             backButton.visibility = View.VISIBLE
@@ -133,7 +134,7 @@ abstract class WizardActivity : HamburgerMenuActivity(), NavigationView.OnNaviga
 
         if(step > 0 && step < model.steps.count()) {
             // go to step-th fragment
-            if(navController.currentDestination.id != model.steps.first().destination) return
+            if(navController.currentDestination?.id != model.steps.first().destination) return
 
             for(i in 0 until step) {
                 navController.navigate(model.steps[i].action)

@@ -55,8 +55,9 @@ abstract class HamburgerMenuActivity : AppCompatActivity() {
     //region NAVIGATION CONTROLLER
     open fun configureNavigationController() {
         val navController = findNavController(R.id.nav_host_fragment)
-        navController.addOnNavigatedListener {
-            controller, destination ->
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+        //navController.addOnNavigatedListener {
+          //  controller, destination ->
 
             //Toast.makeText(this, destination.label, Toast.LENGTH_LONG).show()
             //  if(bottomNavFragments.contains(destination.id)) {

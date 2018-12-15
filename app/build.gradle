@@ -34,11 +34,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1-alpha01'
 
     // Navigation
-    def nav_version = "1.0.0-alpha03"
+    def nav_version = "1.0.0-alpha08"
     implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
     // use -ktx for Kotlin
     implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // use -ktx for Kotlin
-    androidTestImplementation "android.arch.navigation:navigation-testing-ktx:$nav_version"
+    androidTestImplementation "android.arch.navigation:navigation-testing:$nav_version"
     // use -ktx for Kotlin
 
     // Support Libs
